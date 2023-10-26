@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "892930421189",
+    "firebase_url": "https://prm-pe-2193b-default-rtdb.firebaseio.com",
+    "project_id": "prm-pe-2193b",
+    "storage_bucket": "prm-pe-2193b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892930421189:android:f5eb4b88d8600952445bac",
+        "android_client_info": {
+          "package_name": "com.example.pe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdPxbDthOJKjSv50rzT9BuiWT4ITxras8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
