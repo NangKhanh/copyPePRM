@@ -20,9 +20,25 @@ public class FirebaseDatabaseHelper {
         databaseReference = FirebaseDatabase.getInstance().getReference();
     }
 
-    public void addContact(Contact contact) {
-        String contactId = String.valueOf(contact.id);
-        databaseReference.child("contacts").child(contactId).setValue(contact);
+    public void addContact(final Contact contact) {
+        final String contactId = String.valueOf(contact.id);
+        final DatabaseReference contactsRef = databaseReference.child("contacts");
+
+        contactsRef.child(contactId).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    updateContact(contact);
+                } else {
+                    contactsRef.child(contactId).setValue(contact);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                //Error
+            }
+        });
     }
 
     public void updateContact(Contact contact) {
